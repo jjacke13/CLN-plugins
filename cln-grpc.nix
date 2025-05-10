@@ -8,7 +8,7 @@ pkgs.rustPlatform.buildRustPackage rec {
     inherit pname version;
     sha256 = "sha256-ZS2lu2yX7wHoN2WTe3dnpd2yF6SR7M7Rjc2lsT9A72c=";
   };
-  cargoHash = "sha256-xd2A667+pcJt6r8F07ozgrCa/+KrHixgqeLc7RxEBrM=";
+  cargoHash = "sha256-dzicHfi0LNQBd2jE0eMatOvzZNpszNy7UkTRThFDisw=";
 
   nativeBuildInputs = with pkgs; [ cargo rustc protobuf ];
 
