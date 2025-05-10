@@ -19,6 +19,7 @@
       {
         packages = rec {
           cln-grpc = import ./cln-grpc.nix { inherit pkgs; };
+          clnrest = import ./clnrest {inherit pkgs; };
           
         };
         
