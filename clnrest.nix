@@ -11,17 +11,23 @@ pkgs.rustPlatform.buildRustPackage rec {
     owner = "ElementsProject";
     repo = "lightning";
     rev = "release-v25.02.1";
-    hash = ""; 
+    hash = "sha256-XWOtWg4ckXepAS4L2GDl+lMO3FsuyCwVNxgfetdg+Lc="; 
   };
 
-  sourceRoot = "source/plugins/rest-plugin";
+  cargoBuildFlags = [ "-p" "clnrest " "--manifest-path" "plugins/rest-plugin/Cargo.toml" ];
+  
+  cargoLock = {
+    lockFile = "${src}/Cargo.lock";
+  };
+
+  cargoHash = "sha256-nR4jSpjnB0k/v+E78Jy5AhOLwqJgvAfDKFca3DqaSwQ=";
 
   nativeBuildInputs = with pkgs; [ cargo rustc protobuf ];
 
   buildInputs = with pkgs; [ openssl pkg-config ];
 
   preBuild = ''
-  	export PROTOC=${pkgs.protobuf}/bin/protoc
+  	export PROTOC=${pkgs.protobuf}/bin/protoc   
   '';
 
   doCheck = false;
