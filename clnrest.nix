@@ -4,7 +4,7 @@
 }:
 
 pkgs.rustPlatform.buildRustPackage rec {
-  pname = "rest-plugin";
+  pname = "clnrest";
   version = "0.1.1";
 
   src = pkgs.fetchFromGitHub {
