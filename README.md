@@ -1,5 +1,5 @@
 # CLN-plugins
-Nix packages for some plugins of Core lightning
+## Nix packages for some plugins of Core lightning
 
 Always start with WHY:
 
