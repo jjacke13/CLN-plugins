@@ -23,7 +23,7 @@
           summars = import ./summars.nix { inherit pkgs; };
           payany = import ./payany.nix { inherit pkgs; };
           pyln-client = import ./pyln-client.nix { inherit pkgs; }; #not a plugin, but needed as a python dependency for python plugins
-          summary_plugin = import ./summary.nix {inherit pkgs; inherit inputs; inherit system; };
+          summary = import ./summary.nix {inherit pkgs; inherit inputs; inherit system; };
         };
         
         
