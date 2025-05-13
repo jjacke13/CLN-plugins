@@ -17,7 +17,7 @@
       pkgs = nixpkgs.legacyPackages.${system};
     in
       {
-        packages = rec {
+        packages = {
           cln-grpc = import ./cln-grpc.nix { inherit pkgs; };
           clnrest = import ./clnrest.nix { inherit pkgs; };
           summars = import ./summars.nix { inherit pkgs; };
