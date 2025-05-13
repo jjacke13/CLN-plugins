@@ -20,6 +20,7 @@
         packages = rec {
           cln-grpc = import ./cln-grpc.nix { inherit pkgs; };
           clnrest = import ./clnrest.nix { inherit pkgs; };
+          summars = import ./summars.nix { inherit pkgs; };
         };
         
         
