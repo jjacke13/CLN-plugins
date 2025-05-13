@@ -4,14 +4,14 @@
 }:
 
 pkgs.rustPlatform.buildRustPackage rec {
-  pname = "summars";
-  version = "5.0.0";
+  pname = "payany";
+  version = "0.2.5";
 
   src = pkgs.fetchFromGitHub {
     owner = "daywalker90";
-    repo = "summars";
-    rev = "v5.0.0";
-    hash = "sha256-ZLosuOuUmsEOLQ9LK9L70QC79eUBbB/5X2DhPuIJddM="; 
+    repo = "payany";
+    rev = "v0.2.5";
+    hash = "sha256-fEFM7NpunZpUawL5Mr6oGfN3xeCcJuo08GhOedNVMks="; 
   };
   
   nativeBuildInputs = with pkgs; [ cargo rustc ];
