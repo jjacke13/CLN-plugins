@@ -14,6 +14,10 @@ pkgs.rustPlatform.buildRustPackage rec {
     hash = "sha256-ZLosuOuUmsEOLQ9LK9L70QC79eUBbB/5X2DhPuIJddM="; 
   };
   
+  cargoLock = {
+    lockFile = "${src}/Cargo.lock";
+  };
+  
   nativeBuildInputs = with pkgs; [ cargo rustc ];
 
   buildInputs = with pkgs; [ openssl pkg-config ];
