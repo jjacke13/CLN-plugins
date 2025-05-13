@@ -1,7 +1,7 @@
 { pkgs, inputs, system }:
 
 pkgs.python3Packages.buildPythonApplication {
-  pname = "cln-summary-plugin";
+  pname = "cln-rebalance-plugin";
   version = "1.0";
   format = "other";
 
@@ -12,12 +12,10 @@ pkgs.python3Packages.buildPythonApplication {
     sha256 = "sha256-n+lnpYXc1b4Sy0CfoUDlV7G9vWfgLh1JbtGhnYPzH6w=";
   };
 
-  sourceRoot = "source/summary";
+  sourceRoot = "source/rebalance";
 
   propagatedBuildInputs = [
     inputs.self.packages.${system}.pyln-client
-    pkgs.python3Packages.requests
-    pkgs.python3Packages.packaging
   ];
 
   dontBuild = true;
@@ -25,7 +23,7 @@ pkgs.python3Packages.buildPythonApplication {
   installPhase = ''
     mkdir -p $out/bin
     cp * $out/bin/
-    chmod +x $out/bin/summary.py
+    chmod +x $out/bin/rebalance.py
   '';
 
   doCheck = false;

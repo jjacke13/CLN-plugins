@@ -24,6 +24,7 @@
           payany = import ./payany.nix { inherit pkgs; };
           pyln-client = import ./pyln-client.nix { inherit pkgs; }; #not a plugin, but needed as a python dependency for python plugins
           summary = import ./summary.nix {inherit pkgs; inherit inputs; inherit system; };
+          rebalance = import ./rebalance.nix {inherit pkgs; inherit inputs; inherit system; };
         };
         
         
