@@ -27,6 +27,7 @@
           rebalance = import ./rebalance.nix { inherit pkgs; inherit inputs; inherit system; };
           trustedcoin = import ./trustedcoin.nix { inherit pkgs; };
           sauron = import ./sauron.nix { inherit pkgs; inherit inputs; inherit system; };
+          backup = import ./backup.nix { inherit pkgs; inherit inputs; inherit system; };
         };
         
         
