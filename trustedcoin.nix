@@ -11,7 +11,7 @@ pkgs.buildGoModule {
     sha256 = "sha256-mROWJEMRuIAcDXtEyin2+MLFplPInOsv5Q7vACNzi80=";
   };
 
-  vendorHash = "sha256-fW+EoNPC0mH8C06Q6GXNwFdzE7oQT+qd+B7hGGml+hc="; 
+  vendorHash = "sha256-fW+EoNPC0mH8C06Q6GXNwFdzE7oQT+qd+B7hGGml+hc=";
   doCheck = false;
-  
+
 }

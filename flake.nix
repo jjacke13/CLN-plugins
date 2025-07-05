@@ -10,12 +10,12 @@
     };
   };
 
-  outputs = { self, nixpkgs, flake-utils, ... }@inputs: 
+  outputs = { self, nixpkgs, flake-utils, ... }@inputs:
 
-    flake-utils.lib.eachDefaultSystem (system: 
-    let 
-      pkgs = nixpkgs.legacyPackages.${system};
-    in
+    flake-utils.lib.eachDefaultSystem (system:
+      let
+        pkgs = nixpkgs.legacyPackages.${system};
+      in
       {
         packages = {
           cln-grpc = import ./cln-grpc.nix { inherit pkgs; };
@@ -29,8 +29,8 @@
           sauron = import ./sauron.nix { inherit pkgs; inherit inputs; inherit system; };
           backup = import ./backup.nix { inherit pkgs; inherit inputs; inherit system; };
         };
-        
-        
-      }  
+
+
+      }
     );
 }

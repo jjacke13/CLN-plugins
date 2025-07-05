@@ -1,6 +1,5 @@
-{
-  pkgs,
-  ...
+{ pkgs
+, ...
 }:
 
 pkgs.rustPlatform.buildRustPackage rec {
@@ -11,13 +10,13 @@ pkgs.rustPlatform.buildRustPackage rec {
     owner = "daywalker90";
     repo = "summars";
     rev = "v5.0.0";
-    hash = "sha256-ZLosuOuUmsEOLQ9LK9L70QC79eUBbB/5X2DhPuIJddM="; 
+    hash = "sha256-ZLosuOuUmsEOLQ9LK9L70QC79eUBbB/5X2DhPuIJddM=";
   };
-  
+
   cargoLock = {
     lockFile = "${src}/Cargo.lock";
   };
-  
+
   nativeBuildInputs = with pkgs; [ cargo rustc ];
 
   buildInputs = with pkgs; [ openssl pkg-config ];

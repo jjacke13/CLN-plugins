@@ -28,7 +28,7 @@ pkgs.python3Packages.buildPythonApplication rec {
   ];
 
   dontBuild = true;
-  
+
   installPhase = ''
     mkdir -p $out/bin
     cp -r * $out/bin/
@@ -37,5 +37,5 @@ pkgs.python3Packages.buildPythonApplication rec {
   '';
 
   doCheck = false;
-  
+
 }
