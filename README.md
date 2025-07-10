@@ -96,7 +96,7 @@ Add plugins to your Core Lightning configuration:
 # /etc/clightning/config or ~/.lightning/config
 plugin=/run/current-system/sw/bin/cln-grpc
 plugin=/run/current-system/sw/bin/clnrest
-plugin=/run/current-system/sw/bin/rebalance
+plugin=/run/current-system/sw/bin/rebalance.py
 ```
 
 Or declaratively in NixOS (given that you run clightning with systemd):
@@ -107,7 +107,7 @@ services.clightning = {
   extraConfig = ''
     plugin=/run/current-system/sw/bin/cln-grpc
     plugin=/run/current-system/sw/bin/clnrest
-    plugin=/run/current-system/sw/bin/rebalance
+    plugin=/run/current-system/sw/bin/rebalance.py
   '';
 };
 ```
@@ -196,7 +196,7 @@ lightning-cli rebalance-auto enable=true threshold=0.8
 ### Summary Plugin
 
 ```bash
-# Get enhanced node statistics
+# Get simple node status
 lightning-cli summary
 ```
 
