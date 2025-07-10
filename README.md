@@ -11,7 +11,7 @@ A comprehensive collection of Nix packages for Core Lightning plugins, enabling 
 
 Running a Core Lightning node on NixOS? You've probably noticed:
 
-- ❌ The official Core Lightning package doesn't include Rust plugins (clnrest, cln-grpc)
+- ❌ The official Core Lightning Nix package doesn't include Rust plugins (clnrest, cln-grpc)
 - ❌ No easy way to install individual plugins without building everything
 - ❌ Community plugins require manual compilation and management
 - ❌ Configuration is scattered and non-declarative
