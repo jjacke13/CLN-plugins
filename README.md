@@ -163,8 +163,8 @@ pkgs.symlinkJoin {
   paths = with cln-plugins.packages.${pkgs.system}; [
     cln-grpc
     clnrest
-    rebalance.py
-    summary.py
+    rebalance
+    summary
   ];
 }
 ```
