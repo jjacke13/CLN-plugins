@@ -4,13 +4,13 @@
 
 pkgs.rustPlatform.buildRustPackage rec {
   pname = "cln-nip47";
-  version = "0.1.3";
+  version = "0.1.4";
 
   src = pkgs.fetchFromGitHub {
     owner = "daywalker90";
     repo = "cln-nip47";
-    rev = "v0.1.3";
-    hash = "sha256-M/H39vOVfd1z7LnJ4xvgpUDvlKh6WL/eKYixrY/qsUo=";
+    rev = "v0.1.4";
+    hash = "sha256-KzJNYJY5yWhqoZL5KVRV6juFhrBdK9UmfBS5KfnUUpg=";
   };
 
   cargoLock = {
