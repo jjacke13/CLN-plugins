@@ -8,8 +8,8 @@ pkgs.python3Packages.buildPythonApplication rec {
   src = pkgs.fetchFromGitHub {
     owner = "lightningd";
     repo = "plugins";
-    rev = "e8a5a19d1f5a34b249a08a3b75b33b9b44780e3c";
-    sha256 = "sha256-n+lnpYXc1b4Sy0CfoUDlV7G9vWfgLh1JbtGhnYPzH6w=";
+    rev = "9bf0b9ac9fe4b2a61cbaef7b39ca3142f74ef821";
+    sha256 = "sha256-+c4mRkIO+6UnOeOFrFZyCnkX7NlRPo3Ny9zw/ivjQtg=";
   };
 
   sourceRoot = "source/backup";
