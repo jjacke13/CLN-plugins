@@ -18,11 +18,11 @@ let
 
   pyln-proto = pkgs.python3Packages.buildPythonPackage rec {
     pname = "pyln-proto";
-    version = "25.2.2";
+    version = "25.9";
     format = "wheel";
     src = pkgs.fetchurl {
-      url = "https://files.pythonhosted.org/packages/41/76/15c9c02811cb4865081ef7b522596309223b62d1126b29bb79c39662457d/pyln_proto-25.2.2-py3-none-any.whl";
-      sha256 = "sha256-nal845JqFqAV+DnzMggf0N/pjr9B9TjE5QozO5t0tQk=";
+      url = "https://files.pythonhosted.org/packages/74/80/19851847ea4be5b64d4f9a5b68ed84e7b82abbb1f9edf62f664d0ded38dc/pyln_proto-25.9-py3-none-any.whl";
+      sha256 = "sha256-QZZdlrf+YjI8trL+iVPYLwBKKga6HACfkc1eiZ7VV14=";
     };
     buildInputs = [ ];
     propagatedBuildInputs = with pkgs.python3Packages; [
@@ -39,11 +39,11 @@ in
 
 pkgs.python3Packages.buildPythonPackage rec {
   pname = "pyln-client";
-  version = "25.2.2";
+  version = "25.9";
   format = "wheel";
   src = pkgs.fetchurl {
-    url = "https://files.pythonhosted.org/packages/42/8e/9d7f22f0a8c4a3bbaa8a2ce87022855a831d66a5e519f3a6ccfbe36414fd/pyln_client-25.2.2-py3-none-any.whl";
-    sha256 = "sha256-SNGHrelElq9ZW/yEnODwq5/AskIBBI5RwYwvKoe8Liw=";
+    url = "https://files.pythonhosted.org/packages/52/16/5a9436b88a71ec40ded00ee4159b03e37927873698bbf012e8942c13fe18/pyln_client-25.9-py3-none-any.whl";
+    sha256 = "sha256-QXjf4it4HPre97iiqmmVmx0F0LUhKaHfarCIBqd44ik=";
   };
   buildInputs = [ ];
   propagatedBuildInputs = [
