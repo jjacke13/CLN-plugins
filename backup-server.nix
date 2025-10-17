@@ -72,7 +72,7 @@ in
       };
     };
 
-    users.users = mkIf (cfg.user == "cln-bkp-srv") {
+    users.users = lib.mkIf (cfg.user == "cln-bkp-srv") {
       cln-bkp-srv = {
         isSystemUser = true;
         group = cfg.group;
@@ -80,7 +80,7 @@ in
       };
     };
 
-    users.groups = mkIf (cfg.group == "cln-bkp-srv") {
+    users.groups = lib.mkIf (cfg.group == "cln-bkp-srv") {
       cln-bkp-srv = { };
     };
 
