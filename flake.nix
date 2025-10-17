@@ -31,6 +31,9 @@
           nwc = import ./cln-nip47.nix { inherit pkgs; };
         };
 
+        nixosModules = {
+          backup-server = import ./backup-server.nix {inherit inputs system;};
+        };
 
       }
     );
