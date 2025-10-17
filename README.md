@@ -17,7 +17,7 @@ Running a Core Lightning node on NixOS? You've probably noticed:
 - ❌ Configuration is scattered and non-declarative
 
 **CLN-plugins solves these problems by providing:**
-- ✅ Pre-built packages for essential Core Lightning plugins
+-  Pre-built packages for essential Core Lightning plugins
 - ✅ Declarative NixOS integration
 - ✅ Individual plugin selection
 - ✅ Community plugin support
@@ -151,23 +151,22 @@ services.clightning = {
 
 ## 🛠️ Advanced Usage
 
-### Building Multiple Plugins
+### Using the backup-server module
 
-Create a custom package set:
+At a remote server's configuraion add:
 
 ```nix
-# my-cln-plugins.nix
-{ pkgs, cln-plugins }:
-pkgs.symlinkJoin {
-  name = "my-cln-plugins";
-  paths = with cln-plugins.packages.${pkgs.system}; [
-    cln-grpc
-    clnrest
-    rebalance
-    summary
-  ];
-}
+services.cln-bkp-srv.enable = true;
+services.cln-bkp-srv.bkpfile = "<path ending in file.bkp>";
+services.cln-bkp-srv.host = "<ip>";
+services.cln-bkp-srv.port = 8700;
+services.cln-bkp-srv.openFirewall = true;
 ```
+Then, at the machine that your node is running:
+```nix
+backup-cli init socket:<server-ip>:8700 --lightning-dir "$HOME/.lightning/bitcoin"
+```
+Then start your node ✅
 
 ### Plugin Development
 
