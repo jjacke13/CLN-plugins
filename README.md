@@ -167,6 +167,7 @@ Then, at the machine that your node is running:
 backup-cli init socket:<server-ip>:8700 --lightning-dir "$HOME/.lightning/bitcoin"
 ```
 Then start your node ✅
+More info at: [![backup plugin]](https://github.com/lightningd/plugins/blob/master/backup/remote.md)
 
 ### Plugin Development
 
