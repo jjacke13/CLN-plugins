@@ -11,15 +11,14 @@ in
       enable = mkEnableOption "cln-bkp-srv, a server that stores the backup of a CLN sqlite db";
 
       bkpfile = mkOption {
-        description = "Path to file.bkp file";
-        #default = "cln-bkp-srv";
+        description = "Path to file.bkp file. It should be the full path including the 'file.bkp' at the end";
+        default = "/var/lib/cln-bkp-srv/file.bkp";
         type = types.str;
       };
 
       host = mkOption {
-        description = "The host cln-bkp-srv binds to.";
+        description = "The host cln-bkp-srv binds to. '0.0.0.0' probably won't work.";
         default = "127.0.0.1";
-        example = "0.0.0.0";
         type = types.str;
       };
 
@@ -42,7 +41,7 @@ in
       };
 
       openFirewall = mkOption {
-        description = "Open ports in the firewall for the cln-bkp-srv web interface.";
+        description = "Open ports in the firewall for the cln-bkp-srv service";
         default = false;
         type = types.bool;
       };
@@ -73,17 +72,17 @@ in
       };
     };
 
-    /*users.users = mkIf (cfg.user == "cln-bkp-srv") {
+    users.users = mkIf (cfg.user == "cln-bkp-srv") {
       cln-bkp-srv = {
         isSystemUser = true;
         group = cfg.group;
-        home = "/var/lib/${cfg.dataDir}";
+        home = "/var/lib/cln-bkp-srv";
       };
     };
 
     users.groups = mkIf (cfg.group == "cln-bkp-srv") {
       cln-bkp-srv = { };
-    }; */
+    };
 
     networking.firewall = lib.mkIf cfg.openFirewall {
       allowedTCPPorts = [ cfg.port ];
