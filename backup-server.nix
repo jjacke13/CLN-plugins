@@ -69,6 +69,7 @@ in
         Group = cfg.group;
         ExecStart = "${backup}/bin/backup-cli server file://${cfg.bkpfile} ${cfg.host}:${toString cfg.port}";
         Restart = "on-failure";
+        RestartSec = "10";
       };
     };
 
