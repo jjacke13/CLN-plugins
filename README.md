@@ -1,6 +1,6 @@
 # CLN-plugins
 
-[![NixOS](https://img.shields.io/badge/NixOS-24.11-blue.svg?style=flat-square&logo=nixos)](https://nixos.org)
+[![NixOS](https://img.shields.io/badge/NixOS-25.05-blue.svg?style=flat-square&logo=nixos)](https://nixos.org)
 [![Core Lightning](https://img.shields.io/badge/Core%20Lightning-25.05-yellow.svg?style=flat-square&logo=lightning)](https://github.com/ElementsProject/lightning)
 [![License: MIT](https://img.shields.io/badge/License-MIT-green.svg)](https://opensource.org/licenses/MIT)
 [![Flakes](https://img.shields.io/badge/Nix-Flakes-informational?style=flat-square&logo=nixos)](https://nixos.wiki/wiki/Flakes)
