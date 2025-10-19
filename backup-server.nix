@@ -85,6 +85,10 @@ in
       cln-bkp-srv = { };
     };
 
+    systemd.tmpfiles.rules = [
+      "d /var/lib/cln-bkp-srv/                      0700 ${cfg.user} ${cfg.group} - -"
+    ];
+
     networking.firewall = lib.mkIf cfg.openFirewall {
       allowedTCPPorts = [ cfg.port ];
     };
