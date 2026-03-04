@@ -1,7 +1,20 @@
 { pkgs }:
 
 let
-  pyln-bolt7 = pkgs.python3Packages.buildPythonPackage rec {
+  coincurve-overlay = self: super: {
+    coincurve = super.coincurve.overridePythonAttrs (old: {
+      version = "20.0.0";
+      src = super.fetchPypi {
+        pname = "coincurve";
+        version = "20.0.0";
+        hash = "sha256-hyQZ5AQwAwLpOISba5Khlvq9rWUQYLVZ3DEOUvg5KCk=";
+      };
+    });
+  };
+
+  pkgs' = pkgs.extend coincurve-overlay;
+
+  pyln-bolt7 = pkgs'.python3Packages.buildPythonPackage rec {
     pname = "pyln-bolt7";
     version = "1.0.246";
     src = pkgs.fetchurl {
@@ -10,46 +23,40 @@ let
     };
     format = "wheel";
     doCheck = false;
-    buildInputs = [ ];
-    checkInputs = [ ];
-    nativeBuildInputs = [ ];
-    propagatedBuildInputs = [ ];
   };
 
-  pyln-proto = pkgs.python3Packages.buildPythonPackage rec {
+  pyln-proto = pkgs'.python3Packages.buildPythonPackage rec {
     pname = "pyln-proto";
-    version = "25.9";
+    version = "25.12.1";
     format = "wheel";
     src = pkgs.fetchurl {
       url = "https://files.pythonhosted.org/packages/74/80/19851847ea4be5b64d4f9a5b68ed84e7b82abbb1f9edf62f664d0ded38dc/pyln_proto-25.9-py3-none-any.whl";
       sha256 = "sha256-QZZdlrf+YjI8trL+iVPYLwBKKga6HACfkc1eiZ7VV14=";
     };
-    buildInputs = [ ];
-    propagatedBuildInputs = with pkgs.python3Packages; [
+    propagatedBuildInputs = with pkgs'.python3Packages; [
       base58
       bitstring
       coincurve
       cryptography
       pysocks
     ];
-    doCheck = false; # Disable tests to match previous derivations
+    dontCheckRuntimeDeps = true;
+    doCheck = false;
   };
 
 in
 
-pkgs.python3Packages.buildPythonPackage rec {
+pkgs'.python3Packages.buildPythonPackage rec {
   pname = "pyln-client";
-  version = "25.9";
+  version = "25.12.1";
   format = "wheel";
   src = pkgs.fetchurl {
     url = "https://files.pythonhosted.org/packages/52/16/5a9436b88a71ec40ded00ee4159b03e37927873698bbf012e8942c13fe18/pyln_client-25.9-py3-none-any.whl";
     sha256 = "sha256-QXjf4it4HPre97iiqmmVmx0F0LUhKaHfarCIBqd44ik=";
   };
-  buildInputs = [ ];
   propagatedBuildInputs = [
     pyln-proto
     pyln-bolt7
   ];
-  doCheck = false; # Disable tests to match previous derivations
-
+  doCheck = false;
 }
