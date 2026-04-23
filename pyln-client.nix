@@ -27,11 +27,11 @@ let
 
   pyln-proto = pkgs'.python3Packages.buildPythonPackage rec {
     pname = "pyln-proto";
-    version = "25.12.1";
+    version = "26.4";
     format = "wheel";
     src = pkgs.fetchurl {
-      url = "https://files.pythonhosted.org/packages/74/80/19851847ea4be5b64d4f9a5b68ed84e7b82abbb1f9edf62f664d0ded38dc/pyln_proto-25.9-py3-none-any.whl";
-      sha256 = "sha256-QZZdlrf+YjI8trL+iVPYLwBKKga6HACfkc1eiZ7VV14=";
+      url = "https://files.pythonhosted.org/packages/0b/c9/8a34960e1e9550f87697d1f05208d9cc916c14419f18f2d6013801079fc1/pyln_proto-26.4-py3-none-any.whl";
+      sha256 = "sha256-l3ctKFqg0MihVFV3ru+IIeCNWWdvY652DScOGzAVvJ0=";
     };
     propagatedBuildInputs = with pkgs'.python3Packages; [
       base58
@@ -48,11 +48,11 @@ in
 
 pkgs'.python3Packages.buildPythonPackage rec {
   pname = "pyln-client";
-  version = "25.12.1";
+  version = "26.4";
   format = "wheel";
   src = pkgs.fetchurl {
-    url = "https://files.pythonhosted.org/packages/52/16/5a9436b88a71ec40ded00ee4159b03e37927873698bbf012e8942c13fe18/pyln_client-25.9-py3-none-any.whl";
-    sha256 = "sha256-QXjf4it4HPre97iiqmmVmx0F0LUhKaHfarCIBqd44ik=";
+    url = "https://files.pythonhosted.org/packages/60/41/f67df5064b4b9d258fb30e96e1d3ca8f0395c7c0098b24091dde6238fb8e/pyln_client-26.4-py3-none-any.whl";
+    sha256 = "sha256-1UcOHszMG25G45ZYwQGcYoaMWu1KAgNjUFKAPd7czi4=";
   };
   propagatedBuildInputs = [
     pyln-proto

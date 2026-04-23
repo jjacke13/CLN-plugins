@@ -4,13 +4,13 @@
 
 pkgs.rustPlatform.buildRustPackage rec {
   pname = "payany";
-  version = "0.3.0";
+  version = "0.3.1";
 
   src = pkgs.fetchFromGitHub {
     owner = "daywalker90";
     repo = "payany";
-    rev = "v0.3.0";
-    hash = "sha256-VOGJ9vQWozI2Izwwnf8ZJUaR5pGQearuiFzN3DPMIZU=";
+    rev = "v0.3.1";
+    hash = "sha256-ASTitthBtbKxUfiCpM/4GtxihQDDMEebP+hnfJJPu3I=";
   };
 
   cargoLock = {
