@@ -8,6 +8,10 @@
       url = "github:numtide/flake-utils";
       inputs.systems.follows = "systems";
     };
+    cln-hub = {
+      url = "github:jjacke13/cln-hub";
+      inputs.nixpkgs.follows = "nixpkgs";
+    };
   };
 
   outputs = { self, nixpkgs, flake-utils, ... }@inputs:
@@ -29,6 +33,7 @@
           sauron = import ./sauron.nix { inherit pkgs; inherit inputs; inherit system; };
           backup = import ./backup.nix { inherit pkgs; inherit inputs; inherit system; };
           nwc = import ./cln-nip47.nix { inherit pkgs; };
+          cln-hub = inputs.cln-hub.packages.${system}.cln-hub;
         };
 
         nixosModules = {
