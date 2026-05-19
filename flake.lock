@@ -9,11 +9,11 @@
         "rust-overlay": "rust-overlay"
       },
       "locked": {
-        "lastModified": 1779199482,
-        "narHash": "sha256-MiOluYx6EqDOITOJbS97HcG90gIgp4XZXjlpsX7IaG8=",
+        "lastModified": 1779206002,
+        "narHash": "sha256-qjrsaYtsbVPi1nqTv8iOEM/K/CY11YREYV1wnYqbgrM=",
         "owner": "jjacke13",
         "repo": "cln-hub",
-        "rev": "d0f824c1b62b528727df496dc2a9c614fb8a53ef",
+        "rev": "9af57a972b481e77d1023033e5ef0aafb5792552",
         "type": "github"
       },
       "original": {
