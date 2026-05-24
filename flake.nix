@@ -25,6 +25,7 @@
           cln-grpc = import ./cln-grpc.nix { inherit pkgs; };
           clnrest = import ./clnrest.nix { inherit pkgs; };
           summars = import ./summars.nix { inherit pkgs; };
+          sling = import ./sling.nix { inherit pkgs; };
           payany = import ./payany.nix { inherit pkgs; };
           pyln-client = import ./pyln-client.nix { inherit pkgs; }; #not a plugin, but needed as a python dependency for python plugins
           summary = import ./summary.nix { inherit pkgs; inherit inputs; inherit system; };
