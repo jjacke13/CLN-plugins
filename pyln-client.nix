@@ -9,6 +9,13 @@ let
       hash = "sha256-toOX+QKnO6FatWUvrnEva6hWJeOCAmvipcXmmIRaefQ=";
     };
     patches = [ ];
+    postInstall = (old.postInstall or "") + ''
+      extensionDir="$out/${pkgs.python3.sitePackages}/coincurve"
+      if [ -d "$extensionDir/coincurve" ]; then
+        mv "$extensionDir"/coincurve/_libsecp256k1*.so "$extensionDir/"
+        rmdir "$extensionDir/coincurve"
+      fi
+    '';
   });
 
   pyln-bolt7 = pkgs.python3Packages.buildPythonPackage rec {
