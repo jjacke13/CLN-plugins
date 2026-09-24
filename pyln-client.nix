@@ -1,20 +1,17 @@
 { pkgs }:
 
 let
-  coincurve-overlay = self: super: {
-    coincurve = super.coincurve.overridePythonAttrs (old: {
-      version = "20.0.0";
-      src = super.fetchPypi {
-        pname = "coincurve";
-        version = "20.0.0";
-        hash = "sha256-hyQZ5AQwAwLpOISba5Khlvq9rWUQYLVZ3DEOUvg5KCk=";
-      };
-    });
-  };
+  coincurve = pkgs.python3Packages.coincurve.overridePythonAttrs (old: {
+    pname = "coincurve-cp314-fix";
+    version = "22.0.1";
+    src = pkgs.fetchurl {
+      url = "https://files.pythonhosted.org/packages/bd/f9/e9d3c502369933915d3e72d596a1ddf81b3d5ae986f5bd65bc5ada52e6b9/coincurve_cp314_fix-22.0.1.tar.gz";
+      hash = "sha256-toOX+QKnO6FatWUvrnEva6hWJeOCAmvipcXmmIRaefQ=";
+    };
+    patches = [ ];
+  });
 
-  pkgs' = pkgs.extend coincurve-overlay;
-
-  pyln-bolt7 = pkgs'.python3Packages.buildPythonPackage rec {
+  pyln-bolt7 = pkgs.python3Packages.buildPythonPackage rec {
     pname = "pyln-bolt7";
     version = "1.0.246";
     src = pkgs.fetchurl {
@@ -25,15 +22,15 @@ let
     doCheck = false;
   };
 
-  pyln-proto = pkgs'.python3Packages.buildPythonPackage rec {
+  pyln-proto = pkgs.python3Packages.buildPythonPackage rec {
     pname = "pyln-proto";
-    version = "26.4";
+    version = "26.6.8";
     format = "wheel";
     src = pkgs.fetchurl {
-      url = "https://files.pythonhosted.org/packages/0b/c9/8a34960e1e9550f87697d1f05208d9cc916c14419f18f2d6013801079fc1/pyln_proto-26.4-py3-none-any.whl";
-      sha256 = "sha256-l3ctKFqg0MihVFV3ru+IIeCNWWdvY652DScOGzAVvJ0=";
+      url = "https://files.pythonhosted.org/packages/09/b6/696fcf9b568d8df00bc2d3f7b8de598f3bc2b8368d0bddeb1f076fb90574/pyln_proto-26.6.8-py3-none-any.whl";
+      sha256 = "sha256-s8zT/BYpVWDJCt1Gv27669a9pYMc3cn8XUaVuof29qc=";
     };
-    propagatedBuildInputs = with pkgs'.python3Packages; [
+    propagatedBuildInputs = with pkgs.python3Packages; [
       base58
       bitstring
       coincurve
@@ -46,13 +43,13 @@ let
 
 in
 
-pkgs'.python3Packages.buildPythonPackage rec {
+pkgs.python3Packages.buildPythonPackage rec {
   pname = "pyln-client";
-  version = "26.4";
+  version = "26.6.8";
   format = "wheel";
   src = pkgs.fetchurl {
-    url = "https://files.pythonhosted.org/packages/60/41/f67df5064b4b9d258fb30e96e1d3ca8f0395c7c0098b24091dde6238fb8e/pyln_client-26.4-py3-none-any.whl";
-    sha256 = "sha256-1UcOHszMG25G45ZYwQGcYoaMWu1KAgNjUFKAPd7czi4=";
+    url = "https://files.pythonhosted.org/packages/d7/cd/53967e05a16aa867f017815223127cc89b1b31198effaadd35d3fc609582/pyln_client-26.6.8-py3-none-any.whl";
+    sha256 = "sha256-NnWEoyzO5C2zh+e038iZ3IaFysYJJR5An6pOPsuhnmw=";
   };
   propagatedBuildInputs = [
     pyln-proto

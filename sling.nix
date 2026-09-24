@@ -4,13 +4,13 @@
 
 pkgs.rustPlatform.buildRustPackage rec {
   pname = "sling";
-  version = "4.2.1";
+  version = "4.3.2";
 
   src = pkgs.fetchFromGitHub {
     owner = "daywalker90";
     repo = "sling";
-    rev = "v4.2.1";
-    hash = "sha256-9xA8SlNBPg0LqkcfkR2LrAed0EId1gOk51pJUkK+BRM=";
+    rev = "v4.3.2";
+    hash = "sha256-8xDcQlbnffqVhCRhWBBBHv5JMydtfO5ljUANF+pICl0=";
   };
 
   cargoLock = {

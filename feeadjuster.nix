@@ -8,13 +8,13 @@ in
 
 pkgs.stdenv.mkDerivation {
   pname = "cln-feeadjuster-plugin";
-  version = "1.0";
+  version = "0.1.0";
 
   src = pkgs.fetchFromGitHub {
     owner = "lightningd";
     repo = "plugins";
-    rev = "c3a2b4e3609b320d917c5ce97efed115942e5c58";
-    sha256 = "sha256-nHl70O93McT3vs9Q0iyRWYX8VUfvvWfp/Mw3M8xjs38=";
+    rev = "d37793f5b0681c87a3e63ae784ec520484e6646b";
+    sha256 = "sha256-niKdcZ3Plu6hO0x2FYOY6QfoIta3HjDblF/6STACjkU=";
   };
 
   sourceRoot = "source/feeadjuster";

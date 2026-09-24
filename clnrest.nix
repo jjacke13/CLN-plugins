@@ -9,11 +9,11 @@ pkgs.rustPlatform.buildRustPackage rec {
   src = pkgs.fetchFromGitHub {
     owner = "ElementsProject";
     repo = "lightning";
-    rev = "v26.04";
-    hash = "sha256-RZeoJrH+S3CMbbsYpLlq+HYYcVCjzEoT3ZCjX0FdeKA=";
+    rev = "v26.06.8";
+    hash = "sha256-tgTvkZAowonlpmS8CQmmKv7gANv7+sjMjinQwUFyct4=";
   };
 
-  cargoBuildFlags = [ "-p" "clnrest " "--manifest-path" "plugins/rest-plugin/Cargo.toml" ];
+  cargoBuildFlags = [ "-p" "clnrest" "--manifest-path" "plugins/rest-plugin/Cargo.toml" ];
 
   cargoLock = {
     lockFile = "${src}/Cargo.lock";
